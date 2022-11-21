@@ -29,3 +29,11 @@ steps:
     publishJUnitResults: false
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.11'
+
+- task: Docker@2
+  displayName: Push Docker Image
+  inputs:
+    containerRegistry: 'ryanscontainerregistry'
+    repository: 'spring-boot-example'
+    command: 'push'
+    tags: 'latest'
